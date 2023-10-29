@@ -1,0 +1,29 @@
+html,
+body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    font-family: sans-serif;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 16px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.actual {
+    background: #4d4d4d !important;
+}
