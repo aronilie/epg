@@ -1,6 +1,6 @@
 import React from 'react';
-import { getTimeScaleIntervals } from '../../utils/dataProcessing';
 import TimeScaleStyled from './TimeScaleStyled';
+import { getTimeScaleIntervals } from '../../utils/timeScale';
 
 const TimeScale = React.forwardRef<HTMLDivElement>(({}, ref) => {
     const times = getTimeScaleIntervals();
