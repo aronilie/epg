@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { calculateCurrentTimeInEm } from '../utils/dataProcessing';
 import useEPGScroll from './useEPGScroll';
+import { calculateCurrentTimeInEm } from '../utils/time';
 
 const useTimeLine = () => {
     const { programsGridWidth } = useEPGScroll();

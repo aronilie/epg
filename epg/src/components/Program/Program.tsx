@@ -1,10 +1,10 @@
 import { Program as ProgramModel } from '../../models/Program';
 import {
-    getProgramTimeRange,
-    calculateProgramStartPosition,
     calculateProgramPixelLength,
+    calculateProgramStartPosition,
+    getProgramTimeRange,
     isProgramPlayingNow,
-} from '../../utils/dataProcessing';
+} from '../../utils/program';
 import ProgramStyled from './ProgramStyled';
 
 interface ProgramProps {

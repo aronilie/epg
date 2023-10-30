@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
-import { calculateCurrentTimeInPixels } from '../utils/dataProcessing';
 import { EPGConsumer } from '../store/EPGContext';
+import { calculateCurrentTimeInPixels } from '../utils/time';
 
 const useEPGScroll = () => {
     const {

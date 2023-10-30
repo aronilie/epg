@@ -1,29 +1,5 @@
-import { Program } from '../models/Program';
-
-const PROGRAM_PIXELS_PER_HOUR = 328;
-
-export const getTimeScaleIntervals = () => {
-    const intervalInMinutes = 30;
-    const timeArray = [];
-    let totalMinutes = 0;
-    const amPmPeriods = ['AM', 'PM'];
-
-    for (let i = 0; totalMinutes < 24 * 60; i++) {
-        const hours = Math.floor(totalMinutes / 60);
-        const minutes = totalMinutes % 60;
-        const period = amPmPeriods[Math.floor(hours / 12)];
-        const formattedTime =
-            ('0' + (hours % 12)).slice(-2) +
-            ':' +
-            ('0' + minutes).slice(-2) +
-            period;
-        timeArray[i] = formattedTime;
-        totalMinutes += intervalInMinutes;
-    }
-
-    timeArray.push(timeArray[0]);
-    return timeArray;
-};
+import { Program } from "../models/Program";
+import { PROGRAM_PIXELS_PER_HOUR } from "../constants/sizes";
 
 export const isProgramPlayingNow = (program: Program) => {
     if (!program) {
@@ -103,27 +79,4 @@ export const calculateProgramStartPosition = (
         hoursInDecimal * (PROGRAM_PIXELS_PER_HOUR / baseFontSize);
 
     return pixelStartPosition;
-};
-
-export const calculateCurrentTimeInEm = (baseFontSize = 16) => {
-    const currentDate = new Date();
-    const currentHours = currentDate.getHours();
-    const currentMinutes = currentDate.getMinutes();
-
-    const totalHoursInDecimal = currentHours + currentMinutes / 60;
-    const emPosition =
-        totalHoursInDecimal * (PROGRAM_PIXELS_PER_HOUR / baseFontSize);
-
-    return emPosition;
-};
-
-export const calculateCurrentTimeInPixels = () => {
-    const currentDate = new Date();
-    const currentHours = currentDate.getHours();
-    const currentMinutes = currentDate.getMinutes();
-
-    const totalHoursInDecimal = currentHours + currentMinutes / 60;
-    const pixelPosition = totalHoursInDecimal * PROGRAM_PIXELS_PER_HOUR;
-
-    return pixelPosition;
 };
