@@ -1,4 +1,4 @@
-import { PROGRAM_PIXELS_PER_HOUR } from "../constants/sizes";
+import { PROGRAM_PIXELS_PER_HOUR } from '../constants/sizes';
 
 export const calculateCurrentTimeInEm = (baseFontSize = 16) => {
     const currentDate = new Date();

@@ -1,5 +1,5 @@
-import { Program } from "../models/Program";
-import { PROGRAM_PIXELS_PER_HOUR } from "../constants/sizes";
+import { Program } from '../models/Program';
+import { PROGRAM_PIXELS_PER_HOUR } from '../constants/sizes';
 
 export const isProgramPlayingNow = (program: Program) => {
     if (!program) {
